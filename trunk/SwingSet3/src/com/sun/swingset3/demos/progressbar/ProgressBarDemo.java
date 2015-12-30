@@ -88,6 +88,8 @@ public class ProgressBarDemo extends JPanel {
     private Action stopAction;
     private JProgressBar progressBar;
     private JTextArea progressTextArea;
+    
+    private JButton asyncButton = new JButton("Async Test");
 
     private void createProgressPanel() {
         setLayout(new BorderLayout());
@@ -119,6 +121,9 @@ public class ProgressBarDemo extends JPanel {
         progressPanel.add(progressBar);
         progressPanel.add(createLoadButton());
         progressPanel.add(createStopButton());
+        
+        asyncButton.setEnabled(false);
+        progressPanel.add(asyncButton);
     }
 
     private JButton createLoadButton() {
@@ -165,17 +170,33 @@ public class ProgressBarDemo extends JPanel {
 
     private Action createTextLoadAction() {
         return new AbstractAction("text load action") {
-            public void actionPerformed(ActionEvent e) {
-                if (progressBar.getValue() < progressBar.getMaximum()) {
-                    progressBar.setValue(progressBar.getValue() + 1);
-                    progressTextArea.append(text.substring(textLocation, textLocation + 1));
-                    textLocation++;
+            
+        	public void actionPerformed(ActionEvent e) {
+        		/*
+        		 * Will be set to 1 for a second test run. Since asyncButton is
+        		 * only enabled when the progress has finished, this can be used
+        		 * to simulate asynchronous processing.
+        		 */
+            	int inc = 10;
+            	
+                if (progressBar.getValue() + inc < progressBar.getMaximum()) {
+                    incrementProgress(inc);
                 } else {
+                	incrementProgress(progressBar.getMaximum() - progressBar.getValue());
+                	
                     timer.stop();
                     loadAction.setEnabled(true);
                     stopAction.setEnabled(false);
+                    asyncButton.setEnabled(true);
                 }
             }
+
+			private void incrementProgress(int inc) {
+				progressBar.setValue(progressBar.getValue() + inc);
+				progressTextArea.append(text.substring(textLocation, textLocation + inc));
+				textLocation += inc;
+			}
+			
         };
     }
 
@@ -196,5 +217,3 @@ public class ProgressBarDemo extends JPanel {
         }
     }
 }
-
-

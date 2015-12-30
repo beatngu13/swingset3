@@ -31,12 +31,6 @@
 
 package com.sun.swingset3;
 
-import com.sun.swingset3.utilities.AnimatingSplitPane;
-import com.sun.swingset3.utilities.Utilities;
-import org.jdesktop.application.Action;
-import org.jdesktop.application.ResourceMap;
-import org.jdesktop.application.SingleFrameApplication;
-import org.jdesktop.application.View;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
@@ -47,11 +41,18 @@ import java.awt.Font;
 import java.awt.Frame;
 import java.awt.Window;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.HierarchyEvent;
 import java.awt.event.HierarchyListener;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.io.Reader;
+import java.io.StringWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -84,11 +85,17 @@ import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
+
+import org.jdesktop.application.Action;
+import org.jdesktop.application.ResourceMap;
+import org.jdesktop.application.SingleFrameApplication;
+import org.jdesktop.application.View;
+
 import com.sun.swingset3.codeview.CodeViewer;
+import com.sun.swingset3.utilities.AnimatingSplitPane;
 import com.sun.swingset3.utilities.RoundedBorder;
 import com.sun.swingset3.utilities.RoundedPanel;
-import java.awt.event.ComponentAdapter;
-import java.awt.event.ComponentEvent;
+import com.sun.swingset3.utilities.Utilities;
 
 /**
  *
@@ -418,8 +425,24 @@ public class SwingSet3 extends SingleFrameApplication  {
         menubar.setName("menubar");
         
         // File menu
+        JMenuItem laft = new JMenuItem("Look and Feel Test");
+        laft.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				JOptionPane.showMessageDialog(
+                        mainPanel,
+                        "Success!",
+                        "Look and Feel Test",
+                        JOptionPane.INFORMATION_MESSAGE
+                );
+			}
+			
+		});
+        
         JMenu fileMenu = new JMenu();
         fileMenu.setName("file");
+        fileMenu.add(laft);
         menubar.add(fileMenu);
         
         // File -> Quit

@@ -30,17 +30,33 @@
  */
 package com.sun.swingset3.demos.textfield;
 
-import java.awt.*;
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.*;
-import javax.swing.*;
+import java.util.Arrays;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
+
+import javax.swing.JButton;
+import javax.swing.JFormattedTextField;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.UIManager;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 
+import org.jdatepicker.JDateComponentFactory;
+import org.jdatepicker.impl.JDatePickerImpl;
+
+import com.sun.swingset3.DemoProperties;
 import com.sun.swingset3.demos.JGridPanel;
 import com.sun.swingset3.demos.ResourceManager;
-import com.sun.swingset3.DemoProperties;
 
 /**
  * JTextField Demo
@@ -159,8 +175,8 @@ public class TextFieldDemo extends JPanel {
         pnPassword.cell(tfPassword1).
                 cell(tfPassword2).
                 cell();
-
-        JGridPanel pnContent = new JGridPanel(1, 0, 6);
+        
+        JGridPanel pnContent = new JGridPanel(1, 0, 8);
 
         pnContent.setBorderEqual(10);
 
@@ -170,6 +186,8 @@ public class TextFieldDemo extends JPanel {
                 cell(pnDow).
                 cell(lbPassword, new Insets(20, 0, 0, 0)).
                 cell(pnPassword).
+                cell(new JLabel("Test for third-party components (JDatePicker)."), new Insets(20, 0, 0, 0)).
+                cell((JDatePickerImpl) new JDateComponentFactory().createJDatePicker(), new Insets(5, 0, 0, 640)).
                 cell();
 
         add(pnContent);

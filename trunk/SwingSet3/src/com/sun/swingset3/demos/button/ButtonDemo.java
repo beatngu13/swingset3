@@ -138,6 +138,10 @@ public class ButtonDemo extends JPanel {
 
         //<snip>Create button with background color
         button = new JButton("Go");
+        /*
+         * Will be set to "Bar" for level 2 tests.
+         */
+        button.setName("Foo");
         button.setBackground(Color.green);
         button.setContentAreaFilled(true);
         button.setOpaque(false);

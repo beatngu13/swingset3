@@ -275,9 +275,13 @@ public class ToggleButtonDemo extends JPanel implements ChangeListener {
         group.add(radio);
         radiobuttons.add(radio);
         p2.add(Box.createRigidArea(HGAP10));
-
-        radio = (JRadioButton) p2.add(
-                new JRadioButton(resourceManager.getString("ToggleButtonDemo.radio3")));
+        
+        JRadioButton rb = new JRadioButton(resourceManager.getString("ToggleButtonDemo.radio3"));
+        /*
+         * Will be set to "Bar" for level 2 tests.
+         */
+        rb.setName("Foo");
+        radio = (JRadioButton) p2.add(rb);
         group.add(radio);
         radiobuttons.add(radio);
 

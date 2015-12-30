@@ -172,6 +172,10 @@ public class ComboBoxDemo extends JPanel implements ActionListener {
         l = (JLabel) comboBoxPanel.add(new JLabel(resourceManager.getString("ComboBoxDemo.hair_description")));
         l.setAlignmentX(JLabel.LEFT_ALIGNMENT);
         hairCB = (JComboBox) comboBoxPanel.add(createHairComboBox());
+        /*
+         * Will be set to "Bar" for level 2 tests.
+         */
+        hairCB.setName("Foo");
         hairCB.setAlignmentX(JComboBox.LEFT_ALIGNMENT);
         l.setLabelFor(hairCB);
         comboBoxPanel.add(Box.createRigidArea(VGAP15));

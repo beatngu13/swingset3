@@ -38,6 +38,7 @@ import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.net.URISyntaxException;
+
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -88,7 +89,7 @@ public class ButtonDemo extends JPanel {
 
     protected JPanel createSimpleButtonPanel() {
         JPanel panel = new JPanel();
-        panel.setLayout(new FlowLayout(FlowLayout.CENTER, 20, 8));
+        panel.setLayout(new GridLayout(2, 2, 20, 8));
         panel.setBorder(BorderFactory.createTitledBorder(BorderFactory.createEmptyBorder(),
                 "Simple Buttons"));
 

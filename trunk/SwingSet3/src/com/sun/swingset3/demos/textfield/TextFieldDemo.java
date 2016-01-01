@@ -180,14 +180,14 @@ public class TextFieldDemo extends JPanel {
 
         pnContent.setBorderEqual(10);
 
-        pnContent.cell(lbHistoryTextField).
+        pnContent.cell(new JLabel("Test for third-party components (JDatePicker).")).
+        		cell((JDatePickerImpl) new JDateComponentFactory().createJDatePicker(), new Insets(5, 0, 0, 640)).
+        		cell(lbHistoryTextField, new Insets(20, 0, 0, 0)).
                 cell(tfHistory).
                 cell(lbDow, new Insets(20, 0, 0, 0)).
                 cell(pnDow).
                 cell(lbPassword, new Insets(20, 0, 0, 0)).
                 cell(pnPassword).
-                cell(new JLabel("Test for third-party components (JDatePicker)."), new Insets(20, 0, 0, 0)).
-                cell((JDatePickerImpl) new JDateComponentFactory().createJDatePicker(), new Insets(5, 0, 0, 640)).
                 cell();
 
         add(pnContent);

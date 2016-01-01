@@ -162,14 +162,14 @@ public class ComboBoxDemo extends JPanel implements ActionListener {
 
         comboBoxPanel.add(Box.createRigidArea(VGAP15));
 
-        JLabel l = (JLabel) comboBoxPanel.add(new JLabel(resourceManager.getString("ComboBoxDemo.presets")));
-        l.setAlignmentX(JLabel.LEFT_ALIGNMENT);
-        presetCB = (JComboBox) comboBoxPanel.add(createPresetComboBox());
-        presetCB.setAlignmentX(JComboBox.LEFT_ALIGNMENT);
-        l.setLabelFor(presetCB);
-        comboBoxPanel.add(Box.createRigidArea(VGAP30));
+//        JLabel l = (JLabel) comboBoxPanel.add(new JLabel(resourceManager.getString("ComboBoxDemo.presets")));
+//        l.setAlignmentX(JLabel.LEFT_ALIGNMENT);
+        presetCB = createPresetComboBox();
+//        presetCB.setAlignmentX(JComboBox.LEFT_ALIGNMENT);
+//        l.setLabelFor(presetCB);
+//        comboBoxPanel.add(Box.createRigidArea(VGAP30));
 
-        l = (JLabel) comboBoxPanel.add(new JLabel(resourceManager.getString("ComboBoxDemo.hair_description")));
+        JLabel l = (JLabel) comboBoxPanel.add(new JLabel(resourceManager.getString("ComboBoxDemo.hair_description")));
         l.setAlignmentX(JLabel.LEFT_ALIGNMENT);
         hairCB = (JComboBox) comboBoxPanel.add(createHairComboBox());
         /*

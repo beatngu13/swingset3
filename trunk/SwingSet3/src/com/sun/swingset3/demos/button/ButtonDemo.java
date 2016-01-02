@@ -94,7 +94,7 @@ public class ButtonDemo extends JPanel {
                 "Simple Buttons"));
 
         //<snip>Create simple button
-        final JButton simpleButton = new JButton("Do it");
+        final JButton simpleButton = new JButton("Tu es");
         simpleButton.setToolTipText("simple button");
         //</snip>
         //<snip>Add action listener using anonymous inner class
@@ -105,7 +105,7 @@ public class ButtonDemo extends JPanel {
         // using Action classes instead.
         simpleButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent event) {
-                simpleButton.setText("Do it again");
+                simpleButton.setText("Tu es nochmal");
                 // Need to force toplevel to relayout to accommodate new button size
                 SwingUtilities.getWindowAncestor(simpleButton).validate();
             }

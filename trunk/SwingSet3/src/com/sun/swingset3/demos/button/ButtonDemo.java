@@ -94,8 +94,9 @@ public class ButtonDemo extends JPanel {
                 "Simple Buttons"));
 
         //<snip>Create simple button
-        final JButton simpleButton = new JButton("Tu es");
-        simpleButton.setToolTipText("simple button");
+        final JButton simpleButton = new JButton("Tu es", new ImageIcon(getClass().
+                getResource("resources/images/edit-find.png")));
+        simpleButton.setToolTipText("button with text and image");
         //</snip>
         //<snip>Add action listener using anonymous inner class
         // This style is useful when the action code is tied to a
@@ -112,7 +113,6 @@ public class ButtonDemo extends JPanel {
         });
         //</snip>
         simpleButton.putClientProperty("snippetKey", "Create simple button");
-        panel.add(simpleButton);
 
         //<snip>Create image button
         // Image is from the Java Look and Feel Graphics Repository:
@@ -124,6 +124,8 @@ public class ButtonDemo extends JPanel {
         button.putClientProperty("snippetKey", "Create image button");
         panel.add(button);
 
+        panel.add(simpleButton);
+        
         //<snip>Create button with text and image
         // Image is from the Java Look and Feel Graphics Repository:
         // http://java.sun.com/developer/techDocs/hi/repository 

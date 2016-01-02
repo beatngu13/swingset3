@@ -169,7 +169,14 @@ public class ComboBoxDemo extends JPanel implements ActionListener {
 //        l.setLabelFor(presetCB);
 //        comboBoxPanel.add(Box.createRigidArea(VGAP30));
 
-        JLabel l = (JLabel) comboBoxPanel.add(new JLabel(resourceManager.getString("ComboBoxDemo.hair_description")));
+        JLabel l = (JLabel) comboBoxPanel.add(new JLabel(resourceManager.getString("ComboBoxDemo.mouth_description")));
+        l.setAlignmentX(JLabel.LEFT_ALIGNMENT);
+        mouthCB = (JComboBox) comboBoxPanel.add(createMouthComboBox());
+        mouthCB.setAlignmentX(JComboBox.LEFT_ALIGNMENT);
+        l.setLabelFor(mouthCB);
+        comboBoxPanel.add(Box.createRigidArea(VGAP15));
+
+        l = (JLabel) comboBoxPanel.add(new JLabel(resourceManager.getString("ComboBoxDemo.hair_description")));
         l.setAlignmentX(JLabel.LEFT_ALIGNMENT);
         hairCB = (JComboBox) comboBoxPanel.add(createHairComboBox());
         /*
@@ -185,13 +192,6 @@ public class ComboBoxDemo extends JPanel implements ActionListener {
         eyesCB = (JComboBox) comboBoxPanel.add(createEyesComboBox());
         eyesCB.setAlignmentX(JComboBox.LEFT_ALIGNMENT);
         l.setLabelFor(eyesCB);
-        comboBoxPanel.add(Box.createRigidArea(VGAP15));
-
-        l = (JLabel) comboBoxPanel.add(new JLabel(resourceManager.getString("ComboBoxDemo.mouth_description")));
-        l.setAlignmentX(JLabel.LEFT_ALIGNMENT);
-        mouthCB = (JComboBox) comboBoxPanel.add(createMouthComboBox());
-        mouthCB.setAlignmentX(JComboBox.LEFT_ALIGNMENT);
-        l.setLabelFor(mouthCB);
         comboBoxPanel.add(Box.createRigidArea(VGAP15));
 
         // Fill up the remaining space
@@ -308,19 +308,19 @@ public class ComboBoxDemo extends JPanel implements ActionListener {
     }
 
     private void fillComboBox(JComboBox cb) {
-        cb.addItem(resourceManager.getString("ComboBoxDemo.brent"));
-        cb.addItem(resourceManager.getString("ComboBoxDemo.georges"));
-        cb.addItem(resourceManager.getString("ComboBoxDemo.hans"));
-        cb.addItem(resourceManager.getString("ComboBoxDemo.howard"));
-        cb.addItem(resourceManager.getString("ComboBoxDemo.james"));
-        cb.addItem(resourceManager.getString("ComboBoxDemo.jeff"));
-        cb.addItem(resourceManager.getString("ComboBoxDemo.jon"));
-        cb.addItem(resourceManager.getString("ComboBoxDemo.lara"));
-        cb.addItem(resourceManager.getString("ComboBoxDemo.larry"));
-        cb.addItem(resourceManager.getString("ComboBoxDemo.lisa"));
-        cb.addItem(resourceManager.getString("ComboBoxDemo.michael"));
-        cb.addItem(resourceManager.getString("ComboBoxDemo.philip"));
         cb.addItem(resourceManager.getString("ComboBoxDemo.scott"));
+        cb.addItem(resourceManager.getString("ComboBoxDemo.philip"));
+        cb.addItem(resourceManager.getString("ComboBoxDemo.michael"));
+        cb.addItem(resourceManager.getString("ComboBoxDemo.lisa"));
+        cb.addItem(resourceManager.getString("ComboBoxDemo.larry"));
+        cb.addItem(resourceManager.getString("ComboBoxDemo.lara"));
+        cb.addItem(resourceManager.getString("ComboBoxDemo.jon"));
+        cb.addItem(resourceManager.getString("ComboBoxDemo.jeff"));
+        cb.addItem(resourceManager.getString("ComboBoxDemo.james"));
+        cb.addItem(resourceManager.getString("ComboBoxDemo.howard"));
+        cb.addItem(resourceManager.getString("ComboBoxDemo.hans"));
+        cb.addItem(resourceManager.getString("ComboBoxDemo.georges"));
+        cb.addItem(resourceManager.getString("ComboBoxDemo.brent"));
     }
 
     public void actionPerformed(ActionEvent e) {

@@ -144,8 +144,10 @@ public class TextFieldDemo extends JPanel {
 
         initUI();
 
+        tfDow.setPreferredSize(new Dimension(200, 22));
         tfDow.setValue(new Date());
-
+        
+        btnGo.setPreferredSize(new Dimension(200, 25));
         btnGo.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 Calendar calendar = Calendar.getInstance(Locale.ENGLISH);
@@ -165,7 +167,7 @@ public class TextFieldDemo extends JPanel {
         tfHistory.setHistory(Arrays.asList(resourceManager.getString("TextFieldDemo.history.words").split("\\,")));
 
         JGridPanel pnDow = new JGridPanel(3, 2);
-
+        
         pnDow.cell(tfDow).
                 cell(btnGo).
                 cell(lbDowResult);

@@ -33,6 +33,7 @@ package com.sun.swingset3.demos.textfield;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.FlowLayout;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -169,29 +170,30 @@ public class TextFieldDemo extends JPanel {
         tfHistory.setHistory(Arrays.asList(resourceManager.getString("TextFieldDemo.history.words").split("\\,")));
 
         JGridPanel pnDow = new JGridPanel(3, 2);
-        
+        pnDow.setLayout(new FlowLayout());
         pnDow.cell(tfDow).
                 cell(btnGo).
                 cell(lbDowResult);
 
-        JGridPanel pnPassword = new JGridPanel(3, 2);
-
+        JGridPanel pnPassword = new JGridPanel(2, 2);
         pnPassword.cell(tfPassword1).
-                cell(tfPassword2).
-                cell();
+                cell(tfPassword2);
         
         JGridPanel pnContent = new JGridPanel(1, 0, 8);
-
         pnContent.setBorderEqual(10);
-
-        pnContent.cell(new JLabel("Test for third-party components (JDatePicker).")).
-        		cell((JDatePickerImpl) new JDateComponentFactory().createJDatePicker(), new Insets(5, 0, 0, 640)).
+        pnContent.
+        		// Password.
+        		cell(lbPassword).
+        		cell(pnPassword).
+        		// JDatePicker.
+        		cell(new JLabel("Test for third-party components (JDatePicker)."), new Insets(20, 0, 0, 0)).
+        		cell((JDatePickerImpl) new JDateComponentFactory().createJDatePicker()).
+        		// History.
         		cell(lbHistoryTextField, new Insets(20, 0, 0, 0)).
                 cell(tfHistory).
+                // Formatted.
                 cell(lbDow, new Insets(20, 0, 0, 0)).
                 cell(pnDow).
-                cell(lbPassword, new Insets(20, 0, 0, 0)).
-                cell(pnPassword).
                 cell();
 
         add(pnContent);

@@ -280,7 +280,7 @@ public class ToggleButtonDemo extends JPanel implements ChangeListener {
         /*
          * Will be set to "Bar" for level 2 tests.
          */
-        rb.setName("Foo");
+        rb.setName("Bar");
         radio = (JRadioButton) p2.add(rb);
         group.add(radio);
         radiobuttons.add(radio);

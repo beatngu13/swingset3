@@ -142,7 +142,7 @@ public class ButtonDemo extends JPanel {
         /*
          * Will be set to "Bar" for level 2 tests.
          */
-        button.setName("Foo");
+        button.setName("Bar");
         button.setBackground(Color.green);
         button.setContentAreaFilled(true);
         button.setOpaque(false);

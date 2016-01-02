@@ -205,7 +205,7 @@ public class SwingSet3 extends SingleFrameApplication  {
     @Override
     protected void initialize(String args[]) {        
         try {
-            UIManager.setLookAndFeel("com.apple.laf.AquaLookAndFeel");
+            UIManager.setLookAndFeel("com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel");
         } catch (Exception ex) {
             // not catestrophic
         }

@@ -143,6 +143,8 @@ public class TextFieldDemo extends JPanel {
         setLayout(new BorderLayout());
 
         initUI();
+        
+        tfHistory.setBackground(Color.RED);
 
         tfDow.setPreferredSize(new Dimension(200, 22));
         tfDow.setValue(new Date());

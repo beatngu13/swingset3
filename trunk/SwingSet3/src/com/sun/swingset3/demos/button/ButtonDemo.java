@@ -127,10 +127,8 @@ public class ButtonDemo extends JPanel {
         //<snip>Create button with text and image
         // Image is from the Java Look and Feel Graphics Repository:
         // http://java.sun.com/developer/techDocs/hi/repository 
-        button = new JButton("Find",
-                new ImageIcon(getClass().
-                        getResource("resources/images/edit-find.png")));
-        button.setToolTipText("button with text and image");
+        button = new JButton("Find");
+        button.setToolTipText("button with text and (no) image (anymore)");
         button.setHorizontalTextPosition(JButton.LEADING);
         button.setIconTextGap(6);
         //</snip>

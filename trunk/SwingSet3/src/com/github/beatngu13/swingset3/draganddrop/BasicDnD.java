@@ -90,8 +90,8 @@ public class BasicDnD extends JPanel implements ActionListener {
         //Create a scrolled text area.
         textArea = new JTextArea(5, 30);
         textArea.setText("Favorite shows:\nBuffy, Alias, Angel");
+        textArea.setBackground(Color.RED);
         JScrollPane scrollPane = new JScrollPane(textArea);
-        rightPanel.add(createPanelForComponent(scrollPane, "JTextArea"));
 
         //Create a list model and a list.
         DefaultListModel listModel = new DefaultListModel();
@@ -103,6 +103,7 @@ public class BasicDnD extends JPanel implements ActionListener {
         listModel.addElement("Louisa Adams");
         listModel.addElement("Emily Donelson");
         list = new JList(listModel);
+        list.setBackground(Color.RED);
         list.setVisibleRowCount(-1);
         list.getSelectionModel().setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
         
@@ -203,6 +204,8 @@ public class BasicDnD extends JPanel implements ActionListener {
         JScrollPane listView = new JScrollPane(list);
         listView.setPreferredSize(new Dimension(300, 100));
         rightPanel.add(createPanelForComponent(listView, "JList"));
+        
+        rightPanel.add(createPanelForComponent(scrollPane, "JTextArea"));
 
         //Create a tree.
         DefaultMutableTreeNode rootNode = new DefaultMutableTreeNode("Mia Familia");
